@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/user.entity';
+import { CryptoUtilsService } from './core/utils/crypto-utils/crypto-utils.service';
 
 @Module({
   imports: [
@@ -21,6 +22,6 @@ import { User } from './users/user.entity';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, CryptoUtilsService],
 })
 export class AppModule {}
